@@ -5,6 +5,8 @@ import { Routes, Route } from "react-router-dom";
 
 import { checkUserSession } from "./store/user/user.action";
 import Spinner from "./components/spinner/spinner.component";
+import { GlobalStyle } from "./global.styles";
+
 // import Home from "./routes/home/home.component";
 
 //Lazy imports - We will render a spinner while components aren't ready using Suspense  with the fallback prop passing in Spinner component
@@ -23,6 +25,7 @@ const App = () => {
 
   return (
     <Suspense fallback={<Spinner />}>
+      <GlobalStyle />
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
